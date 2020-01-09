@@ -6,11 +6,12 @@
 Welcome to kocher_tools's documentation!
 ========================================
 
+Guides
+------
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
-
+   Guides/SLURM
 
 Indices and tables
 ==================
