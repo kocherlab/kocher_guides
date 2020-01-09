@@ -15,7 +15,6 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
    #SBATCH --mail-type=all          # Email on job start, end, and fault
    #SBATCH --mail-user=<YourNetID>@princeton.edu
 
-
 Array Jobs
 ----------
 
