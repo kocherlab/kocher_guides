@@ -5,7 +5,6 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
 
 **myserial.slurm**
 .. code-block:: bash
-   :linenos:
 
    #!/bin/bash
    #SBATCH --job-name=myserial-job  # Name of the job
@@ -28,7 +27,6 @@ Situations often arise when you want to run many almost identical jobs simultane
 
 **myarray.slurm**
 .. code-block:: bash
-   :linenos:
 
    #!/bin/bash
    #SBATCH --job-name=myarray-job   # Name of the job
@@ -47,7 +45,6 @@ Situations often arise when you want to run many almost identical jobs simultane
    
 **slurm_jobs**
 .. code-block:: bash
-   :linenos:
 
    echo 'Line 1'
    echo 'Line 2'
