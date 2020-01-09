@@ -3,7 +3,7 @@ Serial Jobs
 
 Most scripts - including a large number of bioinformatic analyses and pipelines - may be considered serial processes, as only a single task (i.e. single line of code, algorithm, function, analysis, etc.) is processed at a time. Submitting a serial job only requires the creation of a SLURM script.
 
-.. code-block::bash
+.. code-block:: bash
    echo 'Hello world!'
    echo 'This is my first SLURM script'
    echo 'Behold the power of HPCs'
