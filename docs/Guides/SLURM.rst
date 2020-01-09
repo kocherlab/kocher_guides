@@ -1,3 +1,6 @@
+SLURM
+=====
+
 Serial Jobs
 -----------
 
@@ -51,7 +54,7 @@ Situations often arise when you want to run many almost identical jobs simultane
 
 .. code-block:: bash
    :linenos:
-   
+
    echo 'Line 1'
    echo 'Line 2'
    echo 'Line 3'

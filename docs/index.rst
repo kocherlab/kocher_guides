@@ -6,16 +6,9 @@
 Welcome to kocher_tools's documentation!
 ========================================
 
-Guides
-------
 .. toctree::
    :maxdepth: 1
+   :caption: Guides:
+   :hidden:
 
    Guides/SLURM
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
