@@ -3,7 +3,7 @@ Serial Jobs
 
 Most scripts - including a large number of bioinformatic analyses and pipelines - may be considered serial processes, as only a single task (i.e. single line of code, algorithm, function, analysis, etc.) is processed at a time. Submitting a serial job only requires the creation of a SLURM script.
 
-.. code-block::bash
+.. code-block::console
 	#!/bin/bash
 	#SBATCH --job-name=myserial-job  # Name of the job
 	#SBATCH --nodes=1                # Node count
@@ -25,7 +25,7 @@ Situations often arise when you want to run many almost identical jobs simultane
 
 
 myarray.slurm
-.. code-block::bash
+.. code-block::console
 	#!/bin/bash
 	#SBATCH --job-name=myarray-job   # Name of the job
 	#SBATCH --output=myarray.%j.out  # STDOUT file
@@ -42,7 +42,7 @@ myarray.slurm
 	sed -n -e "$SLURM_ARRAY_TASK_ID p" slurm_jobs | srun bash
 
 slurm_job
-.. code-block::bash
+.. code-block::console
 	echo 'Line 1'
 	echo 'Line 2'
 	echo 'Line 3'
