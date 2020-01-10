@@ -50,6 +50,8 @@ Situations often arise when you want to run many almost identical jobs simultane
    #SBATCH --mail-user=<YourNetID>@princeton.edu
    
    sed -n -e "$SLURM_ARRAY_TASK_ID p" slurm_jobs | srun bash
+
+Please note: In comparison to our serial SLURM script, our array script includes two additional aruments - *%j* and *$SLURM_ARRAY_TASK_ID*. *%j* is used to add the job id to our stdout/stderr output files, thus resulting in a set of stdout/stderr files for each task. *$SLURM_ARRAY_TASK_ID* is used to assign the current task ID (1, 2, 3, etc.) from *#SBATCH --array=1-6*. The IDs are then used by the *sed* command run the relevant line number. 
    
 .. code-block:: bash
    :linenos:
