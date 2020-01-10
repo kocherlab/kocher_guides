@@ -12,6 +12,7 @@ Lets say I’ve been developing some code in the directory \verb|MyRepo| and wou
     :align: center
     :figclass: align-center
     :name: fig1
+    :numbered: 1
      
     Contents of the MyRepo directory
 
