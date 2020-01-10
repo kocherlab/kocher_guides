@@ -6,9 +6,14 @@ Creating a Repository
 
 Lets say I’ve been developing some code in the directory \verb|MyRepo| and would like to use Git for version control. Currently I have three files in **MyRepo** - *my1stCode.py*, *my2ndCode.py*, and *untracked.txt* (Figure).
 
-.. image:: Git/Section1/MyRepo.png
-   :scale: 50 %
-   :align: center
+
+.. figure:: Git/Section1/MyRepo.png
+    :scale: 50 %
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
+     
+    Contents of the MyRepo directory
 
 Our first step is to initialize Git (i.e. create an empty Git repository) using the *init* command (Figure), please note that this step is only required when creating a new repository and is not required when cloning a repository. 
 
