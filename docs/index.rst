@@ -12,3 +12,4 @@ Welcome to kocher_tools's documentation!
    :hidden:
 
    Guides/SLURM
+   Guides/Git
