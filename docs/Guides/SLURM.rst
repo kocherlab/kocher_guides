@@ -28,7 +28,7 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
 Array Jobs
 ----------
 
-Situations often arise when you want to run many almost identical jobs simultaneously, perhaps running the same program many times but changing the input data or some argument or parameter. One possible solution is to write a Python or Perl script to create all the slurm files and then write a BASH script to execute them. This is very time consuming and might end up submitting many more jobs to the queue than you actually need to. This is a typical problem suited to an array job. Test :ref:`myarray`
+Situations often arise when you want to run many almost identical jobs simultaneously, perhaps running the same program many times but changing the input data or some argument or parameter. One possible solution is to write a Python or Perl script to create all the slurm files and then write a BASH script to execute them. This is very time consuming and might end up submitting many more jobs to the queue than you actually need to. This is a typical problem suited to an array job. Below is an example of a :ref:`myarray <SLURM array script>` that submits jobs line by line from a :ref:`slurm_jobs <task file>`. Task files are an ideal solution when running jobs with random filenames - i.e. without a repeated pattern. 
 
 .. code-block:: bash
    :linenos:
