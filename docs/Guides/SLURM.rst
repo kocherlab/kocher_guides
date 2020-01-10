@@ -8,7 +8,6 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
 
 .. code-block:: bash
    :linenos:
-   :caption: myserial.slurm
    :name: myserial
 
    #!/bin/bash
@@ -24,6 +23,9 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
    echo 'Hello world!'
    echo 'This is my first SLURM script'
    echo 'Behold the power of HPCs'
+
+.. centered::
+   myserial.slurm
 
 Array Jobs
 ----------
