@@ -4,14 +4,14 @@ Git and GitHub
 Creating a Repository
 ---------------------
 
-Lets say I’ve been developing some code in the directory \verb|MyRepo| and would like to use Git for version control. Currently I have three files in **MyRepo** - *my1stCode.py*, *my2ndCode.py*, and *untracked.txt* (Figure).
+Lets say I’ve been developing some code in the directory \verb|MyRepo| and would like to use Git for version control. Currently I have three files in **MyRepo** - *my1stCode.py*, *my2ndCode.py*, and *untracked.txt* (Figure :numref:`fig1`).
 
 
 .. figure:: Git/Section1/MyRepo.png
     :scale: 50 %
     :align: center
-    :alt: alternate text
     :figclass: align-center
+    :name: fig1
      
     Contents of the MyRepo directory
 
