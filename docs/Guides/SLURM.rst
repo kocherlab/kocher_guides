@@ -64,3 +64,9 @@ Please note: In comparison to our serial SLURM script, our array script includes
    echo 'Line 4'
    echo 'Line 5'
    echo 'Line 6'
+
+Additional Information
+----------------------
+
+More tutorials and information on SLURM may be found at the `Intro to HPC on the Princeton Clusters Github <https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/07_slurm>`_.
+
