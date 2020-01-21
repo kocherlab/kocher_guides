@@ -11,5 +11,6 @@ Welcome to kocher_tools's documentation!
    :caption: Guides:
    :hidden:
 
+   Guides/Galaxy	
    Guides/SLURM
    Guides/Git
