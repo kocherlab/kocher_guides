@@ -15,7 +15,7 @@ Unlike `usegalaxy.org <https://usegalaxy.org/>`_, the Kocher Galaxy Server requi
 
 Where are the tools?
 --------------------
-Once you've created your account and logged in, the Homepage :numref:`(Fig. %s) <Homepage>` of the Kocher Galaxy Server should be displayed. To access the tools currently on the server, select **Kocher Tools** on the left sidebar. Once selected, the currently available tools will be listed below.
+Once you've created your account and logged in, the Homepage :numref:`(Fig. %s) <Homepage>` of the Kocher Galaxy Server should be displayed. You may find the current lab tools under the heading **KOCHER LAB TOOLS** on the left sidebar. To access the tools currently on the server, select **Database Retrieval** or **Database Upload**. Once selected, the currently available tools will be listed below.
 
 .. figure:: Galaxy/Homepage.jpg
     :width: 100%
@@ -27,13 +27,43 @@ Once you've created your account and logged in, the Homepage :numref:`(Fig. %s) 
 
 Query the SQL server
 --------------------
-To query the Kocher lab SQL database, select **Retrieve samples** *from SQLite database* on the left sidebar. Once selected, you should see the following page :numref:`(Fig. %s) <Retrieve>`. To query the server you are first required to indicate what you want returned (i.e. **Return what?**). In the current version, this may be one or more tables/columns in the database. Once the returned data is selected, you may filter the returned data with the include/exclude optional arguments found below. In the current version, specalized include/exclude arguments are provided for: **Sample ID**, **Species**, **Genus**, and **Samples from nests**. Samples may be filtered by other information using **Include/Exclude Column**, which require the column be selected from a dropdown menu alongside a specified value. Please note: if no filters are selected, all samples will be returned.   
+To query the Kocher lab SQL database, you may select from the basic retrieval tools (**Retrieve collected samples**, **Retrieve stored samples**, **Retrieve barcoded samples**, and **Retrieve locations**) or the general retrieval tool (**Retrieve samples**). The basic retrieval tools by default will only return relevant columns (i.e. storage information, barcoding/sequencing information, etc) whereas the general retrieval tool will by default return all columns.
 
-.. figure:: Galaxy/Retrieve.jpg
+
+Basic Retrieval
+---------------
+Once a basic retrieval tool has been selected, you should see the following page :numref:`(Fig. %s) <Basic Retrieve>`.
+
+.. figure:: Galaxy/Basic_Retrieve.jpg
     :width: 100%
     :align: center
     :figclass: align-center
-    :name: Retrieve
+    :name: Basic Retrieve
      
-    Retrieve samples Page
+    Retrieve Collected Samples Page
+
+By default, the tool will return all relevant data. You may filter the returned data using the include and/or exclude arguments. This may be done by clicking **Insert Column**, which will then display a dropdown menu of columns. For instance, to only include results for samples *BMJ1-A1* and *BMJ1-A2* you would select the **Unique ID** column and enter the IDs within the text box :numref:`(Fig. %s) <Basic Enter>`. Please note, that additional filters may be specified by clicking **Insert Column** more than once.
+
+.. figure:: Galaxy/Basic_Enter.jpg
+    :width: 100%
+    :align: center
+    :figclass: align-center
+    :name: Basic Retrieve
+     
+    Sample Filtering
+
+General Retrieval
+-----------------
+Once the general tool is selected, you should see the following page :numref:`(Fig. %s) <General Retrieve>`. To query the server you are first required to indicate what you want returned (i.e. **Return what?**). In the current version, this may be one or more *tables* or *columns* within the database. Once the returned data is selected, you may filter the returned data with the include and/or exclude arguments found below. In the current version, specalized include/exclude arguments are provided for: **Sample ID**, **Species**, **Genus**, and **Samples from nests**. Samples may be filtered by other information using **Include/Exclude Column**, which require the column be selected from a dropdown menu alongside a specified value. Please note: if no filters are selected, all samples will be returned.
+
+.. figure:: Galaxy/General_Retrieve.jpg
+    :width: 100%
+    :align: center
+    :figclass: align-center
+    :name: Basic Retrieve
+     
+    General Retrieve Samples Page
+
+
+
 
