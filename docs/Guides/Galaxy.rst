@@ -32,35 +32,35 @@ To query the Kocher lab SQL database, you may select from the basic retrieval to
 
 Basic Retrieval
 ---------------
-Once a basic retrieval tool has been selected, you should see the following page :numref:`(Fig. %s) <Basic_Retrieve>`.
+Once a basic retrieval tool has been selected, you should see the following page :numref:`(Fig. %s) <BasicRetrieve>`.
 
 .. figure:: Galaxy/Basic_Retrieve.jpg
     :width: 100%
     :align: center
     :figclass: align-center
-    :name: Basic_Retrieve
+    :name: BasicRetrieve
      
     Retrieve Collected Samples Page
 
-By default, the tool will return all relevant data. You may filter the returned data using the include and/or exclude arguments. This may be done by clicking **Insert Column**, which will then display a dropdown menu of columns. For instance, to only include results for samples *BMJ1-A1* and *BMJ1-A2* you would select the **Unique ID** column and enter the IDs within the text box :numref:`(Fig. %s) <Basic_Enter>`. Please note, that additional filters may be specified by clicking **Insert Column** more than once.
+By default, the tool will return all relevant data. You may filter the returned data using the include and/or exclude arguments. This may be done by clicking **Insert Column**, which will then display a dropdown menu of columns. For instance, to only include results for samples *BMJ1-A1* and *BMJ1-A2* you would select the **Unique ID** column and enter the IDs within the text box :numref:`(Fig. %s) <BasicEnter>`. Please note, that additional filters may be specified by clicking **Insert Column** more than once.
 
 .. figure:: Galaxy/Basic_Enter.jpg
     :width: 100%
     :align: center
     :figclass: align-center
-    :name: Basic_Enter
+    :name: BasicEnter
      
     Sample Filtering
 
 General Retrieval
 -----------------
-Once the general tool is selected, you should see the following page :numref:`(Fig. %s) <General_Retrieve>`. To query the server you are first required to indicate what you want returned (i.e. **Return what?**). In the current version, this may be one or more *tables* or *columns* within the database. Once the returned data is selected, you may filter the returned data with the include and/or exclude arguments found below. In the current version, specalized include/exclude arguments are provided for: **Sample ID**, **Species**, **Genus**, and **Samples from nests**. Samples may be filtered by other information using **Include/Exclude Column**, which require the column be selected from a dropdown menu alongside a specified value. Please note: if no filters are selected, all samples will be returned.
+Once the general tool is selected, you should see the following page :numref:`(Fig. %s) <GeneralRetrieve>`. To query the server you are first required to indicate what you want returned (i.e. **Return what?**). In the current version, this may be one or more *tables* or *columns* within the database. Once the returned data is selected, you may filter the returned data with the include and/or exclude arguments found below. In the current version, specalized include/exclude arguments are provided for: **Sample ID**, **Species**, **Genus**, and **Samples from nests**. Samples may be filtered by other information using **Include/Exclude Column**, which require the column be selected from a dropdown menu alongside a specified value. Please note: if no filters are selected, all samples will be returned.
 
 .. figure:: Galaxy/General_Retrieve.jpg
     :width: 100%
     :align: center
     :figclass: align-center
-    :name: General_Retrieve
+    :name: GeneralRetrieve
      
     General Retrieve Samples Page
 
