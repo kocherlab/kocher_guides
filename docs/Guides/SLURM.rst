@@ -45,7 +45,7 @@ Often a complex or large serial process (e.g. RNA-seq alignment, homology identi
    #SBATCH --mail-type=all          # Email on job start, end, and fault
    #SBATCH --mail-user=<YourNetID>@princeton.edu
 
-   blastn -query query.fasta -db db.fasta -outfmt blast.out -num_threads 10
+   blastn -query query.fasta -db db.fasta -out blast.out -num_threads 10
 
 Array Jobs
 ----------
