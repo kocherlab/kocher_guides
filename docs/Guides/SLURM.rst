@@ -23,7 +23,29 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
 
    echo 'Hello world!'
    echo 'This is my first SLURM script'
-   echo 'Behold the power of HPCs'
+   echo 'Behold the power of HPC'
+
+Multithreaded Jobs (i.e. MPI)
+-----------------------------
+
+Often a complex or large serial process (e.g. RNA-seq alignment, homology identification, etc.) may be accelerated using multithreading (i.e. simultaneous execution of multiple CPU threads/cores). This often results in higher computational resource usage but lower wall-time. 
+
+.. code-block:: bash
+   :linenos:
+   :caption: mympi.slurm
+   :name: myserial
+
+   #!/bin/bash
+   #SBATCH --job-name=mympi-job     # Name of the job
+   #SBATCH --nodes=1                # Node count
+   #SBATCH --ntasks=1               # Number of tasks across all nodes
+   #SBATCH --cpus-per-task=10       # Cores per task (>1 if multi-threaded tasks)
+   #SBATCH --mem-per-cpu=4G         # Memory per core (4G is default)
+   #SBATCH --time=00:01:00          # Run time limit (HH:MM:SS)
+   #SBATCH --mail-type=all          # Email on job start, end, and fault
+   #SBATCH --mail-user=<YourNetID>@princeton.edu
+
+   blastn -query query.fasta -db db.fasta -outfmt blast.out -num_threads 10
 
 Array Jobs
 ----------
