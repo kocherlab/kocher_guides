@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'kocher_tools'
+project = 'Kocher Lab Tools and Guides'
 copyright = '2020, Andrew Webb'
 author = 'Andrew Webb'
 
