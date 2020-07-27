@@ -25,13 +25,11 @@ Usage
 
    fastqc KMT5L_D05.fq.gz
 
-Reference
----------
-`Software Website <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
-
-Other Links
------------
-`Github <https://github.com/s-andrews/FastQC>`_.
+Useful Links
+------------
+* `Documentation <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/>`_
+* `Reference \(website\) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+* `Github <https://github.com/s-andrews/FastQC>`_
 
 fastp
 =====
@@ -44,13 +42,11 @@ Usage
 
    fastp -i KMT5L_D05.fq.gz -o KMT5L_D05.filtered.fq.gz
 
-Reference
----------
-`Chen et al\.\, 2018 <https://academic.oup.com/bioinformatics/article/34/17/i884/5093234>`_.
-
-Other Links
------------
-`Github <https://github.com/OpenGene/fastp>`_.
+Useful Links
+------------
+* `Documentation <https://github.com/OpenGene/fastp/blob/master/README.md>`_
+* `Reference \(Chen et al\.\, 2018\) <https://academic.oup.com/bioinformatics/article/34/17/i884/5093234>`_
+* `Github <https://github.com/OpenGene/fastp>`_
 
 **************
 Read Alignment
