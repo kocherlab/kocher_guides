@@ -1,8 +1,10 @@
+##############
 Git and GitHub
-==============
+##############
 
+*********************
 Creating a Repository
----------------------
+*********************
 
 Lets say I’ve been developing some code in the directory **MyRepo** and would like to use Git for version control. Currently I have three files in **MyRepo** - *my1stCode.py*, *my2ndCode.py*, and *untracked.txt* :numref:`(Fig. %s) <MyRepo>`.
 

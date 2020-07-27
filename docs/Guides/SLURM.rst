@@ -1,8 +1,10 @@
+#####
 SLURM
-=====
+#####
 
+***********
 Serial Jobs
------------
+***********
 
 Most scripts - including a large number of bioinformatic analyses and pipelines - may be considered serial processes, as only a single task (i.e. single line of code, algorithm, function, analysis, etc.) is processed at a time. Submitting a serial job only requires the creation of a SLURM script.
 
@@ -25,8 +27,9 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
    echo 'This is my first SLURM script'
    echo 'Behold the power of HPC'
 
+*****************************
 Multithreaded Jobs (i.e. MPI)
------------------------------
+*****************************
 
 Often a complex or large serial process (e.g. RNA-seq alignment, homology identification, etc.) may be accelerated using multithreading (i.e. simultaneous execution of multiple CPU threads/cores). This often results in higher computational resource usage but lower wall-time. 
 
@@ -47,8 +50,9 @@ Often a complex or large serial process (e.g. RNA-seq alignment, homology identi
 
    blastn -query query.fasta -db db.fasta -out blast.out -num_threads 10
 
+**********
 Array Jobs
-----------
+**********
 
 Situations often arise when you want to run many almost identical jobs simultaneously, perhaps running the same program many times but changing the input data or some argument or parameter. One possible solution is to write a Python or Perl script to create all the slurm files and then write a BASH script to execute them. This is very time consuming and might end up submitting many more jobs to the queue than you actually need to. This is a typical problem suited to an array job. Below is an example of a SLURM array script (See :ref:`myarray`) that submits jobs line by line from a task file (See :ref:`slurm_jobs`). Task files are an ideal solution when running jobs with random filenames - i.e. without a repeated pattern. 
 
@@ -87,8 +91,9 @@ Please note: In comparison to our serial SLURM script, our array script includes
    echo 'Line 5'
    echo 'Line 6'
 
+**********************
 Additional Information
-----------------------
+**********************
 
 More tutorials and information on SLURM may be found at the `Intro to HPC on the Princeton Clusters Github <https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/06_slurm>`_.
 
