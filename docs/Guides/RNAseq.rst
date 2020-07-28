@@ -50,9 +50,11 @@ A comprehensive and rapid filtering method for fastq files. “[fastp] can perfo
 Adapter trimming includes various options from defining adapter sequences on the command-line to adapter auto-detection; adapter trimming may also be disabled, if desired. 
 
 Trimming by quality score includes three methods:
+
 * **cut_front**:  move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
 * **cut_tail**:  move a sliding window 3' to 5’, drop the bases in the window if its mean quality is below a specified threshold. 
 * **cut_right**:  move a sliding window 5' to 3’, if the mean quality of a window is below a specified threshold, drop the window and the sequence to the right (i.e. 3’).
+
 Many of these methods may be altered to be similar to functions within the `Trimmomatic package <http://www.usadellab.org/cms/?page=trimmomatic>`_, if desired.
 
 The output from fastp is an HTML file that may be viewed in any browser (e.g. chrome) :numref:`(Fig. %s) <fastp_fig>` and a JSON file that may be used for further interpreting. The HTML contains details on the input before and after the filtering process.
