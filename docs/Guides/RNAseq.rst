@@ -16,13 +16,23 @@ All QC programs may imported using:
 
 FastQC
 ======
-A straightforward method to identify quality concerns within BAM, SAM or FastQ files. “FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.”
+A straightforward method to identify quality concerns within BAM, SAM or FastQ files. “FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.” The output from FastQC is an HTML file that may be viewed in any browser (e.g. chrome) :numref:`(Fig. %s) <fastQC_fig>`. The output contains eleven sections flagged as either *Pass* (green check mark), *Warn* (yellow exclamation mark), or *Fail* (red X). It should be noted that all sections of the output should be examined, rather than just sections marked as *Warn* and *Fail*, to determine the best selection of  filters to apply.
+
+.. figure:: RNA_seq/fastQC.jpg
+    :width: 100%
+    :align: center
+    :figclass: align-center
+    :name: fastQC_fig
+     
+    FastQC Output Example
+
 
 Usage
 -----
 .. code-block:: bash
    :name: FastQC
 
+   # Test
    fastqc KMT5L_D05.fq.gz
 
 Useful Links
