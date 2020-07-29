@@ -112,7 +112,7 @@ Input Files Types
 * `Genome annotation  \(GFF format\) <https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/254/395/GCF_003254395.2_Amel_HAv3.1/GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz>`_
 * `Transcript Sequences \(FASTA format\) <https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/254/395/GCF_003254395.2_Amel_HAv3.1/GCF_003254395.2_Amel_HAv3.1_rna.fna.gz>`_
 
-*Note: all example files may be found within the NCBI genome page for `Apis mellifera HAv3\.1 <https://www.ncbi.nlm.nih.gov/genome/?term=txid7460[orgn]*>`_.*
+*Note: all example files may be found within the NCBI genome page for `Apis mellifera HAv3\.1 <https://www.ncbi.nlm.nih.gov/genome/?term=txid7460>`_.*
 
 Input Conversion
 ================
@@ -125,17 +125,17 @@ This may be done using **gffread**.
 .. code-block:: bash
    :name: gffread
 
-	gffread GCF_003254395.2_Amel_HAv3.1_genomic.gff -T -o GCF_003254395.2_Amel_HAv3.1_genomic.gtf
+   gffread GCF_003254395.2_Amel_HAv3.1_genomic.gff -T -o GCF_003254395.2_Amel_HAv3.1_genomic.gtf
 
 
 Annotation - GFF to transcript/gene conversion file
 ---------------------------------------------------
-This may be done using **gffread**.
+This may be done using **create_tid_converter.py**.
 
 .. code-block:: bash
    :name: tid_converter
 
-	create_tid_converter.py GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz -T -o GCF_003254395.2_Amel_HAv3.1_genomic.tid_to_gid2.csv
+   create_tid_converter.py GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz -T -o GCF_003254395.2_Amel_HAv3.1_genomic.tid_to_gid2.csv
 
 STAR
 ====
