@@ -1,6 +1,6 @@
-#########################################
-Welcome to the Kocher Lab's Documentation
-#########################################
+#######################################
+Welcome to the Kocher Lab Documentation
+#######################################
 
 .. toctree::
    :maxdepth: 1
