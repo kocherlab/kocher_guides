@@ -1,6 +1,7 @@
 ##########################
 RNA-seq Tools and Analyses
 ##########################
+The primary purpose of the following documentation is to give insight into the various steps, procedures, and programs used in typical RNA-seq analyses. In the sections below, we have detailed the basic usage of various software packages. Please note that the majority software packages accept additional arguments that may be found within their documentation. Links to the documentation (and other important information) may be found within the **Useful Links** section of each software package.
 
 ********************
 Quality Control (QC)
@@ -167,8 +168,8 @@ These input files and other necessary parameters may be assigned using the follo
 
    STAR --runThreadN 10 --runMode genomeGenerate --genomeDir AMEL_Index --genomeFastaFiles GCF_003254395.2_Amel_HAv3.1_genomic.fna --sjdbGTFfile GCF_003254395.2_Amel_HAv3.1_genomic.gtf --sjdbOverhang 99 --limitGenomeGenerateRAM 38000000000
 
-Read Alignment Arguments & Usage
---------------------------------
+Basic Read Alignment Arguments & Usage
+--------------------------------------
 * **--runMode alignReads**: Required to set the run-mode to read alignment
 * **--runThreadN** *thread_int*: Defines the number of threads for read alignment
 * **--genomeDir** *output_dir*: Defines the name of the index directory
@@ -197,6 +198,28 @@ Useful Links
 * `Documentation <https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf>`_
 * `Reference \(Dobin et al\.\, 2012\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts635>`_
 * `Github <https://github.com/alexdobin/STAR>`_
+
+Gene Quantification STAR Results w/ featureCounts
+-------------------------------------------------
+A simple and straightforward method from the subread package to estimate gene counts from BAM files.  that only requries a **Genome annotation**.
+
+Basic featureCounts Arguments
+-----------------------------
+* **-a** *gtf_file*: Defines the name of the genomic annotation
+* **-T** *thread_int*: Defines the number of threads for read alignment
+* **-o** *output_file*: Defines the filename of the count output
+* **BAM File**: The filename of the **BAM File** *Note: Positional argument*
+
+.. code-block:: bash
+   :name: star_quant
+
+   featureCounts -T 10 -a GCF_003254395.2_Amel_HAv3.1_genomic.gt -o AMEL2_featurecounts.txt AMEL2.out.bam
+
+Useful Links
+^^^^^^^^^^^^
+* `Documentation <http://bioinf.wehi.edu.au/subread-package/SubreadUsersGuide.pdf>`_
+* `Reference \(Liao et al\.\, 2014\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btt656>`_
+* `Homepage <http://subread.sourceforge.net/>`_
 
 ----
 
