@@ -43,6 +43,8 @@ Useful Links
 * `Reference \(website\) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 * `Github <https://github.com/s-andrews/FastQC>`_
 
+----
+
 fastp
 =====
 A comprehensive and rapid filtering method for FASTQ files. fastp is able to perform quality control, adapter trimming, quality filtering, per-read quality pruning, and many other operations. Most analyses will require at least two operations: 1) adapter trimming and 2) per read trimming by quality score. 
@@ -137,6 +139,8 @@ This may be done using **create_tid_converter.py** using a GFF as an input.
 
    create_tid_converter.py GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz GCF_003254395.2_Amel_HAv3.1_genomic.tid_to_gid2.csv
 
+----
+
 STAR
 ====
 A rapid and highly accurate, but memory intensive, traditional alignment capable of producing either SAM or BAM files. Alignment requries two operations: 1) indexing a reference genome and 2) read alignment. 
@@ -193,6 +197,8 @@ Useful Links
 * `Documentation <https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf>`_
 * `Reference \(Dobin et al\.\, 2012\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts635>`_
 * `Github <https://github.com/alexdobin/STAR>`_
+
+----
 
 kallisto
 ========
