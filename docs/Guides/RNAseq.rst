@@ -8,10 +8,10 @@ Quality Control (QC)
 ********************
 “Garbage in, garbage out” is a concept popular among bioinformaticians to highlight an immutable truth; the quality of an analysis (i.e. the output) is dependent on the quality of the input. Therefore, most bioinformatic pipelines begin with QC steps to identify and remove data that may be detrimental to an analysis. 
 
-All QC programs may imported using:
+All QC programs may be imported using:
 
 .. code-block:: bash
-   :name: kocher_RNA
+   :name: kocher_RNA1
 
    conda activate kocher_RNA
 
@@ -100,10 +100,12 @@ Useful Links
 **********************
 RNA-seq Read Alignment
 **********************
-In computational biology, sequence alignment is a process used to identify regions of similarity between sequences. An inherent challenge of RNA-seq read alignment is the mapping of sequences from non-contiguous genomic regions – i.e. the mRNAs. At present, two strategies of RNA-seq read alignment have been developed and thoroughly tested: i) traditional alignment to genomic sequence data and ii) pseudoalignment to transcript sequences. All RNA-seq Read Alignment programs may imported using:
+In computational biology, sequence alignment is a process used to identify regions of similarity between sequences. An inherent challenge of RNA-seq read alignment is the mapping of sequences from non-contiguous genomic regions – i.e. the mRNAs. At present, two strategies of RNA-seq read alignment have been developed and thoroughly tested: i) traditional alignment to genomic sequence data and ii) pseudoalignment to transcript sequences. Research has shown that both strategies - when applied by highly-accurate algorithms - produce similar ressults \(`Costa-Silva et al\.\, 2017 <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0190152>`_\). 
+
+All RNA-seq Read Alignment programs may be imported using:
 
 .. code-block:: bash
-   :name: kocher_RNA
+   :name: kocher_RNA2
 
    conda activate kocher_RNA
 
@@ -275,3 +277,93 @@ Useful Links
 * `Documentation <https://pachterlab.github.io/kallisto/manual>`_
 * `Reference \(Bray et al\.\, 2016\) <https://www.nature.com/articles/nbt.3519>`_
 * `Homepage <https://pachterlab.github.io/kallisto/>`_
+
+----
+
+********************************
+Differential Expression Analysis
+********************************
+A common use of multiple transcriptome datasets is the search for differentially expressed (DE) genes - i.e. genes that show *significant* differences in expression level between conditions, experimental groups, etc. Many statistical analyses have been developed to perform differential expression analysis (DEA), however, please note that they will likely produce different results \(`Costa-Silva et al\.\, 2017 <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0190152>`_, ADD OTHER REFS\).
+
+All DEA programs may be imported using:
+
+.. code-block:: bash
+   :name: kocher_DEA
+
+   conda activate kocher_DEA
+
+Input Files Types
+=================
+Depending on the preferred alignment strategy, the relevant input file(s) may be found among the following three file types:
+
+* download:`Count Matrix File <RNA_seq/count_matrix.tsv>`
+* download:`Sample Groups File <RNA_seq/sample_groups.csv>`
+* kallisto Transcript Abundance File (i.e. abundance.h5)
+* `Genome annotation  \(GFF format\) <https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/254/395/GCF_003254395.2_Amel_HAv3.1/GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz>`_
+
+Input Conversion
+================
+It should be noted that some of the methods in this section may require a file conversion step for an input file to be compatible and function correctly.
+
+Transcript/Gene Conversion File
+-------------------------------
+This may be done using **create_tid_converter.py** using a GFF as an input.
+
+.. code-block:: bash
+   :name: tid_converter
+
+   create_tid_converter.py GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz GCF_003254395.2_Amel_HAv3.1_genomic.tid_to_gid2.csv
+
+DESeq2
+======
+A well-studied and thoroughly compared method to identify DE genes using count data. DESeq2 by itself is only capable of accepting count data, such as the output from STAR and featureCounts. However, by using tximport - a program written by DESeq2 developers - it is possible to use other data types, such as transcript abundance data from kallisto. Below you will find commented R scripts for: 1) STAR and featureCounts and 2) kallisto.
+
+Count Data Usage
+^^^^^^^^^^^^^^^^
+.. code-block:: bash
+   :name: deseq2_count
+
+   library("DESeq2") # Import DESeq2
+   cts <- as.matrix(read.csv("count_matrix.tsv",sep="\t",row.names="gene_id")) # Read in the count matrix
+   coldata <- read.csv("sample_groups.csv", row.names=1) # Read in the sample groups
+   coldata <- coldata[,c("group","type")] # Limit the columns in the sample groups to group and type
+   coldata$group <- factor(coldata$group) # Categorize and save the sample group data
+   coldata$type <- factor(coldata$type) # Categorize and save the sample type data
+   dds <- DESeqDataSetFromMatrix(countData = cts, colData = coldata, design = ~ group) # Create a DESeq object from the count matrix
+   dds <- DESeq(dds) # Run DESeq
+   res <- results(dds) # Save the results
+   resOrdered <- res[order(res$pvalue),] # Save the adjusted p-values
+   write.csv(as.data.frame(resOrdered), file="DESeq2_count_matrix.csv") # Create a csv of results w/adjusted p-values
+
+Transcript Abundance Usage
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: bash
+   :name: deseq2_abundance
+
+   library("DESeq2") # Import DESeq2
+   library(tximport) # Import tximport
+   samples <- read.table(file.path("sample_groups.csv"), header = TRUE, sep = ",") # Read in the sample groups
+   files <- file.path("../../kallisto", samples$file, "abundance.h5") # Assign paths to transcript abundance files (e.g. kallisto/ERR883768_1/abundance.h5)
+   names(files) <- samples$file # Assign each path with its sample id (e.g. ERR883768_1)
+   tx2gene <- read.table(file.path("../../../Genome/GCF_000214255.1_Bter_1.0_genomic.tid_to_gid.csv"), header = FALSE, sep = ",") # Read in the transcript/gene conversion file
+   txi <- tximport(files, type = "kallisto", tx2gene = tx2gene) # Read in the kallisto files and convert the transcript abundances to gene abundances
+   coldata <- read.csv("sample_groups.csv", row.names=1) # Read in the sample groups
+   coldata <- coldata[,c("group","type")] # Limit the columns in the sample groups to group and type
+   coldata$group <- factor(coldata$group) # Categorize and save the sample group data
+   coldata$type <- factor(coldata$type) # Categorize and save the sample type data
+   dds <- DESeqDataSetFromTximport(txi, coldata, ~group) # Create a DESeq object from the tximport data
+   dds <- DESeq(dds) # Run DESeq
+   res <- results(dds) # Save the results
+   resOrdered <- res[order(res$pvalue),] # Save the adjusted p-values
+   write.csv(as.data.frame(resOrdered), file="DESeq2_kallisto.csv") # Create a csv of results w/adjusted p-values
+
+Useful Links
+------------
+* `DESeq2 Documentation <https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html>`_
+* `DESeq2 Reference Manual <https://bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf>`_
+* `DESeq2 Reference \(Love et al\.\, 2014\) <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8>`_
+* `DESeq2 Homepage <https://bioconductor.org/packages/release/bioc/html/DESeq2.html>`_
+* `tximport Documentation <https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html>`_
+* `tximport Reference Manual <https://bioconductor.org/packages/release/bioc/manuals/tximport/man/tximport.pdf>`_
+* `tximport Reference \(Soneson et al\.\, 2015\) <https://f1000research.com/articles/4-1521/v1>`_
+* `tximport Homepage <https://bioconductor.org/packages/release/bioc/html/tximport.html>`_
