@@ -314,6 +314,8 @@ This may be done using **create_tid_converter.py** using a GFF as an input.
 
    create_tid_converter.py GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz GCF_003254395.2_Amel_HAv3.1_genomic.tid_to_gid2.csv
 
+----
+
 DESeq2
 ======
 A well-studied and thoroughly compared method to identify DE genes using count data. DESeq2 by itself is only capable of accepting count data, such as the output from STAR and featureCounts. However, by using tximport - a program written by DESeq2 developers - it is possible to use other data types, such as transcript abundance data from kallisto. Below you will find commented R scripts for: 1) STAR and featureCounts and 2) kallisto.
