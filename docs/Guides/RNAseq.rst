@@ -296,8 +296,8 @@ Input Files Types
 =================
 Depending on the preferred alignment strategy, the relevant input file(s) may be found among the following three file types:
 
-* download:`Count Matrix File <RNA_seq/count_matrix.tsv>`
-* download:`Sample Groups File <RNA_seq/sample_groups.csv>`
+* :download:`Count Matrix File <RNA_seq/count_matrix.tsv>`
+* :download:`Sample Groups File <RNA_seq/sample_groups.csv>`
 * kallisto Transcript Abundance File (i.e. abundance.h5)
 * `Genome annotation  \(GFF format\) <https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/003/254/395/GCF_003254395.2_Amel_HAv3.1/GCF_003254395.2_Amel_HAv3.1_genomic.gff.gz>`_
 
