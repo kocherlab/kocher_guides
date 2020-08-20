@@ -151,15 +151,15 @@ STAR
 ====
 A rapid and highly accurate, but memory intensive, traditional alignment capable of producing either SAM or BAM files. Alignment requries two operations: 1) indexing a reference genome and 2) read alignment. 
 
-Indexing Arguments & Usage
---------------------------
+Indexing
+--------
 Indexing requires two input files to operate:
 
 * **Genomic sequence**
 * **Genome annotation**
 
-These input files and other necessary parameters may be assigned using the following arguments:
-
+Arguments
+^^^^^^^^^
 :--runMode genomeGenerate:
   Required to set the run-mode to indexing
 :--runThreadN <thread_int>:
@@ -180,9 +180,15 @@ These input files and other necessary parameters may be assigned using the follo
 
    STAR --runThreadN 10 --runMode genomeGenerate --genomeDir AMEL_Index --genomeFastaFiles GCF_003254395.2_Amel_HAv3.1_genomic.fna --sjdbGTFfile GCF_003254395.2_Amel_HAv3.1_genomic.gtf --sjdbOverhang 99 --limitGenomeGenerateRAM 38000000000
 
-Basic Read Alignment Arguments & Usage
---------------------------------------
+Read Alignment
+--------------
+Read alignment requires two input files to operate:
 
+* **Indexed Genome (from previous section)**
+* **Fastq Reads (SE or PE)**
+
+Arguments
+^^^^^^^^^
 :--runMode alignReads:
   Required to set the run-mode to read alignment
 :--runThreadN <thread_int>:
