@@ -53,15 +53,12 @@ A comprehensive and rapid filtering method for FASTQ files. fastp is able to per
 Adapter trimming includes various options from defining adapter sequences on the command-line to adapter auto-detection; adapter trimming may also be disabled, if desired. 
 
 Trimming by quality score includes three methods:
-
-* **cut_front**:  move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
-* **cut_tail**:  move a sliding window 3' to 5’, drop the bases in the window if its mean quality is below a specified threshold. 
-* **cut_right**:  move a sliding window 5' to 3’, if the mean quality of a window is below a specified threshold, drop the window and the sequence to the right (i.e. 3’).
-
 :--cut_front: 
-  The first parameter.
+  Move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
 :--cut_tail:
-  The second parameter.
+  Move a sliding window 3' to 5’, drop the bases in the window if its mean quality is below a specified threshold. 
+:--cut_right:
+  Move a sliding window 5' to 3’, if the mean quality of a window is below a specified threshold, drop the window and the sequence to the right (i.e. 3’).
 
 Many of these methods may be altered to be similar to functions within the `Trimmomatic package <http://www.usadellab.org/cms/?page=trimmomatic>`_, if desired.
 
@@ -161,14 +158,20 @@ Indexing requires two input files to operate:
 * **Genome annotation**
 
 These input files and other necessary parameters may be assigned using the following arguments:
-
-* **--runMode genomeGenerate**: Required to set the run-mode to indexing
-* **--runThreadN** *thread_int*: Defines the number of threads for indexing
-* **--genomeDir** *output_dir*: Defines the name of the index directory
-* **--genomeFastaFiles** *fasta_file*: Defines the name of the genomic sequence in fasta format
-* **--sjdbGTFfile** *gtf_file*: Defines the name of the genomic annotation in GTF format
-* **--sjdbOverhang** *overhang_int*: Defines the maximum overhang for a read, may be calculated by: *read_length - 1*
-* **--limitGenomeGenerateRAM** *RAM_int*: Defines the RAM limit for indexing in bytes
+:--runMode genomeGenerate:
+  Required to set the run-mode to indexing
+:--runThreadN <thread_int>:
+  Defines the number of threads for indexing
+:--genomeDir <output_dir>:
+  Defines the name of the output index directory
+:--genomeFastaFiles <fasta_file>:
+  Defines the name of the genomic sequence in fasta format
+:--sjdbGTFfile <gtf_file>:
+  Defines the name of the genomic annotation in GTF format
+:--sjdbOverhang <overhang_int>:
+  Defines the maximum overhang for a read, may be calculated by: *read_length - 1*
+:--limitGenomeGenerateRAM <RAM_int>:
+  Defines the RAM limit for indexing in bytes
 
 .. code-block:: bash
    :name: star_index
@@ -177,19 +180,29 @@ These input files and other necessary parameters may be assigned using the follo
 
 Basic Read Alignment Arguments & Usage
 --------------------------------------
-* **--runMode alignReads**: Required to set the run-mode to read alignment
-* **--runThreadN** *thread_int*: Defines the number of threads for read alignment
-* **--genomeDir** *output_dir*: Defines the name of the index directory
-* **--readFilesIn** *se_fastq_filename* or *pe_fastq_filename pe_fastq_filename*: Defines the fastq filenames to align to the index. Please note: when using paired-end reads a space is placed between the files
-* **--readFilesCommand zcat**: Defines the read method for gzipped fastq files. Only required when using fastq.gz
-* **--outSAMtype** *format_strs*: Defines the output format, if SAM is not desired. See below for options
-* **--outFileNamePrefix** *output_prefix*: Defines the output prefix name
+:--runMode alignReads:
+  Required to set the run-mode to read alignment
+:--runThreadN <thread_int>:
+  Defines the number of threads for read alignment
+:--genomeDir <output_dir>:
+  Defines the name of the index directory
+:--readFilesIn <se_fastq_filename>, <pe_fastq_filename pe_fastq_filename>:
+  Defines the fastq filenames to align to the index. Please note: when using paired-end reads a space is placed between the files
+:--readFilesCommand zcat:
+  Defines the read method for gzipped fastq files. Only required when using fastq.gz
+:--outSAMtype <format_strs>:
+  Defines the output format, if SAM is not desired. See below for options
+:--outFileNamePrefix <output_prefix>:
+  Defines the output prefix name
 
 Output Options
 ^^^^^^^^^^^^^^
-* **--outSAMtype BAM Unsorted**: Defines the output format as unsorted BAM
-* **--outSAMtype BAM SortedByCoordinate**: Defines the output format as sorted BAM
-* **--outSAMtype BAM Unsorted SortedByCoordinate**: Defines the output format as seperate sorted and unsorted BAM files
+:--outSAMtype BAM Unsorted:
+  Defines the output format as unsorted BAM
+:--outSAMtype BAM SortedByCoordinate:
+  Defines the output format as sorted BAM
+:--outSAMtype BAM Unsorted SortedByCoordinate:
+  Defines the output format as seperate sorted and unsorted BAM files
 
 .. code-block:: bash
    :name: star_alignment
