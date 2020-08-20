@@ -53,8 +53,10 @@ A comprehensive and rapid filtering method for FASTQ files. fastp is able to per
 Adapter trimming includes various options from defining adapter sequences on the command-line to adapter auto-detection; adapter trimming may also be disabled, if desired. 
 
 Trimming by quality score includes three methods:
-:--cut_front: 
-  Move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
+----
+
+:--cut_front:
+Move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
 :--cut_tail:
   Move a sliding window 3' to 5’, drop the bases in the window if its mean quality is below a specified threshold. 
 :--cut_right:
@@ -158,6 +160,7 @@ Indexing requires two input files to operate:
 * **Genome annotation**
 
 These input files and other necessary parameters may be assigned using the following arguments:
+
 :--runMode genomeGenerate:
   Required to set the run-mode to indexing
 :--runThreadN <thread_int>:
@@ -180,6 +183,7 @@ These input files and other necessary parameters may be assigned using the follo
 
 Basic Read Alignment Arguments & Usage
 --------------------------------------
+
 :--runMode alignReads:
   Required to set the run-mode to read alignment
 :--runThreadN <thread_int>:
