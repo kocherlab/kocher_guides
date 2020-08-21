@@ -232,12 +232,16 @@ Gene Quantification STAR Results w/ featureCounts
 -------------------------------------------------
 A simple and straightforward method from the subread package to estimate gene counts from BAM files.  that only requries a **Genome annotation**.
 
-Basic featureCounts Arguments
------------------------------
-* **-a** *gtf_file*: Defines the name of the genomic annotation
-* **-T** *thread_int*: Defines the number of threads for read alignment
-* **-o** *output_file*: Defines the filename of the count output
-* **BAM File**: The filename of the **BAM File** *Note: Positional argument*
+Arguments
+^^^^^^^^^
+:-a <gtf_file>:
+  Defines the name of the genomic annotation
+:-T <thread_int>:
+  Defines the number of threads for read alignment
+:-o <output_file>:
+  Defines the filename of the count output
+:<BAM File>:
+  The filename of the **BAM File** *Note: Positional argument*
 
 .. code-block:: bash
    :name: star_quant
@@ -256,28 +260,45 @@ kallisto
 ========
 A rapid, highly accurate, and memory efficient pseudoalignment method for quantifying abundances of transcripts. Alignment requries two operations: 1) indexing a reference genome and 2) transcript quantification. 
 
-Indexing Arguments & Usage
---------------------------
+Indexing
+--------
 Indexing requires only the **Transcript Sequences File** and an index filename to be assigned using the following arguments:
 
-* **index**: Required to set the run-mode to indexing *Note: Positional argument* 
-* **-i** *index_filename*: Defines the filename of the index
-* **Transcript Sequences File**: The filename of the **Transcript Sequences File** *Note: Positional argument* 
+Arguments
+^^^^^^^^^
+:index:
+  Required to set the run-mode to indexing *Note: Positional argument* 
+:-T <thread_int>:
+  Defines the number of threads for read alignment
+:<Transcript Sequences File>:
+  The filename of the **Transcript Sequences File** *Note: Positional argument*
 
 .. code-block:: bash
    :name: kallisto_index
 
    kallisto index -i GCF_003254395.2_Amel_HAv3.1_rna.idx GCF_003254395.2_Amel_HAv3.1_rna.fna.gz
 
-Transcript Quantification Arguments & Usage
--------------------------------------------
-* **quant**: Required to set the run-mode to transcript quantification *Note: Positional argument*
-* **-i** *index_filename*: Defines the filename of the index
-* **-t** *thread_int*: Defines the number of threads for transcript quantification
-* **-b** *bootstrap_int*: Defines the number of bootstrap samples
-* **-o** *output_dir_name*: Defines the name of the output directory
-* **FASTQ Read Files**: The filenames of the **FASTQ Read Files** *Note: Positional argument* 
+Transcript Quantification
+-------------------------
+Transcript quantification requires two input files to operate:
 
+* **Indexed Transcripts (from previous section)**
+* **Fastq Reads (SE or PE)**
+
+Common Arguments
+^^^^^^^^^^^^^^^^
+:quant:
+  Required to set the run-mode to transcript quantification *Note: Positional argument*
+:-i <index_filename>:
+  Defines the filename of the index
+:-t <thread_int>:
+  Defines the number of threads for transcript quantification
+:-b <bootstrap_int>:
+  Defines the number of bootstrap samples
+:-o <output_dir_name>:
+  Defines the name of the output directory
+:FASTQ Read Files:
+  The filenames of the **FASTQ Read Files** *Note: Positional argument*
 Single-end Mode
 ^^^^^^^^^^^^^^^
 * **--single**: Required to set the run-mode to single-end transcript quantification
