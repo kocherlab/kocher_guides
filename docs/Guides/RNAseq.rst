@@ -287,7 +287,7 @@ Transcript quantification requires two input files to operate:
 
 Common Arguments
 ^^^^^^^^^^^^^^^^
-:quant:
+:quant: *<positional>*
   Required to set the run-mode to transcript quantification *Note: Positional argument*
 :-i <index_filename>:
   Defines the filename of the index
@@ -299,6 +299,7 @@ Common Arguments
   Defines the name of the output directory
 :FASTQ Read Files:
   The filenames of the **FASTQ Read Files** *Note: Positional argument*
+
 Single-end Mode
 ^^^^^^^^^^^^^^^
 * **--single**: Required to set the run-mode to single-end transcript quantification
