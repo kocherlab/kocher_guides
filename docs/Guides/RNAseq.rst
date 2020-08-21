@@ -54,11 +54,11 @@ Adapter trimming includes various options from defining adapter sequences on the
 
 **Trimming by quality score includes three methods:**
 
-:--cut_front:
+**--cut_front**
   Move a sliding window 5' to 3’, drop the bases in the window if its mean quality is below a specified threshold.
-:--cut_tail:
+**--cut_tail**
   Move a sliding window 3' to 5’, drop the bases in the window if its mean quality is below a specified threshold. 
-:--cut_right:
+**--cut_right**
   Move a sliding window 5' to 3’, if the mean quality of a window is below a specified threshold, drop the window and the sequence to the right (i.e. 3’).
 
 Many of these methods may be altered to be similar to functions within the `Trimmomatic package <http://www.usadellab.org/cms/?page=trimmomatic>`_, if desired.
@@ -160,19 +160,19 @@ Indexing requires two input files to operate:
 
 Arguments
 ^^^^^^^^^
-:--runMode genomeGenerate:
+**--runMode** *genomeGenerate*
   Required to set the run-mode to indexing
-:--runThreadN <thread_int>:
+**--runThreadN** *<thread_int>*
   Defines the number of threads for indexing
-:--genomeDir <output_dir>:
+**--genomeDir** *<output_dir>*
   Defines the name of the output index directory
-:--genomeFastaFiles <fasta_file>:
+**--genomeFastaFiles** *<fasta_file>*
   Defines the name of the genomic sequence in fasta format
-:--sjdbGTFfile <gtf_file>:
+**--sjdbGTFfile** *<gtf_file>*
   Defines the name of the genomic annotation in GTF format
-:--sjdbOverhang <overhang_int>:
+**--sjdbOverhang** *<overhang_int>*
   Defines the maximum overhang for a read, may be calculated by: *read_length - 1*
-:--limitGenomeGenerateRAM <RAM_int>:
+**--limitGenomeGenerateRAM** *<RAM_int>*
   Defines the RAM limit for indexing in bytes
 
 .. code-block:: bash
@@ -189,28 +189,28 @@ Read alignment requires two input files to operate:
 
 Arguments
 ^^^^^^^^^
-:--runMode alignReads:
+**--runMode** *alignReads*
   Required to set the run-mode to read alignment
-:--runThreadN <thread_int>:
+**--runThreadN** *<thread_int>*
   Defines the number of threads for read alignment
-:--genomeDir <output_dir>:
+**--genomeDir** *<output_dir>*
   Defines the name of the index directory
-:--readFilesIn <se_fastq_filename>, <pe_fastq_filename pe_fastq_filename>:
+**--readFilesIn** *<se_fastq_filename>*, *<pe_fastq_filename pe_fastq_filename>*
   Defines the fastq filenames to align to the index. Please note: when using paired-end reads a space is placed between the files
-:--readFilesCommand zcat:
+**--readFilesCommand** *zcat*
   Defines the read method for gzipped fastq files. Only required when using fastq.gz
-:--outSAMtype <format_strs>:
+**--outSAMtype** *<format_strs>*
   Defines the output format, if SAM is not desired. See below for options
-:--outFileNamePrefix <output_prefix>:
+**--outFileNamePrefix** *<output_prefix>*
   Defines the output prefix name
 
 Output Options
 ^^^^^^^^^^^^^^
-:--outSAMtype BAM Unsorted:
+**--outSAMtype** *BAM Unsorted*
   Defines the output format as unsorted BAM
-:--outSAMtype BAM SortedByCoordinate:
+**--outSAMtype** *BAM SortedByCoordinate*
   Defines the output format as sorted BAM
-:--outSAMtype BAM Unsorted SortedByCoordinate:
+**--outSAMtype** *BAM Unsorted SortedByCoordinate*
   Defines the output format as seperate sorted and unsorted BAM files
 
 .. code-block:: bash
@@ -234,14 +234,14 @@ A simple and straightforward method from the subread package to estimate gene co
 
 Arguments
 ^^^^^^^^^
-:-a <gtf_file>:
+**-a** *<gtf_file>*
   Defines the name of the genomic annotation
-:-T <thread_int>:
+**-T** *<thread_int>*
   Defines the number of threads for read alignment
-:-o <output_file>:
+**-o** *<output_file>*
   Defines the filename of the count output
-:<BAM File>:
-  The filename of the **BAM File** *Note: Positional argument*
+**BAM File**
+  The filename of the **BAM File**. *Note: Positional argument*
 
 .. code-block:: bash
    :name: star_quant
@@ -266,12 +266,12 @@ Indexing requires only the **Transcript Sequences File** and an index filename t
 
 Arguments
 ^^^^^^^^^
-:index:
+**index**
   Required to set the run-mode to indexing *Note: Positional argument* 
-:-T <thread_int>:
+**-T** *<thread_int>*
   Defines the number of threads for read alignment
-:<Transcript Sequences File>:
-  The filename of the **Transcript Sequences File** *Note: Positional argument*
+**Transcript Sequences File**
+  The filename of the **Transcript Sequences File**. *Note: Positional argument*
 
 .. code-block:: bash
    :name: kallisto_index
@@ -288,31 +288,35 @@ Transcript quantification requires two input files to operate:
 Common Arguments
 ^^^^^^^^^^^^^^^^
 **quant**
-  Required to set the run-mode to transcript quantification *Note: Positional argument*
-:quant: *<positional>*
-  Required to set the run-mode to transcript quantification *Note: Positional argument*
-:-i <index_filename>:
+  Required to set the run-mode to transcript quantification. *Note: Positional argument*
+**-i** *<index_filename>*
   Defines the filename of the index
-:-t <thread_int>:
+**-t** *<thread_int>*
   Defines the number of threads for transcript quantification
-:-b <bootstrap_int>:
+**-b** *<bootstrap_int>*
   Defines the number of bootstrap samples
-:-o <output_dir_name>:
+**-o** *<output_dir_name>*
   Defines the name of the output directory
-:FASTQ Read Files:
-  The filenames of the **FASTQ Read Files** *Note: Positional argument*
+**FASTQ Read Files**  
+  The filenames of the **FASTQ Read Files**. *Note: Positional argument*
 
 Single-end Mode
 ^^^^^^^^^^^^^^^
-* **--single**: Required to set the run-mode to single-end transcript quantification
-* **-l** *length_float*: Defines the estimated average fragment length
-* **-s** *stdev_float*: Defines the estimated standard deviation of fragment length
+**--single**
+  Required to set the run-mode to single-end transcript quantification
+**-l** *<length_float>*
+  Defines the estimated average fragment length
+**-s** *<stdev_float>*
+  Defines the estimated standard deviation of fragment length
 
 Output Options
 ^^^^^^^^^^^^^^
-* **--pseudobam**: Defines if pseudoalignments should be saved to a transcriptome to BAM file
-* **--genomebam**: Defines if pseudoalignments should be projected onto a genome-sorted BAM file. *Note: Requries* **--gtf** *to operate*
-* **--gtf** *gtf_filename*: Defines the name of the genomic annotation in GTF format
+**--pseudobam**
+  Defines if pseudoalignments should be saved to a transcriptome to BAM file
+**--genomebam**
+  Defines if pseudoalignments should be projected onto a genome-sorted BAM file. *Note: Requries* **--gtf** *to operate*
+**--gtf** *<gtf_filename>*
+  Defines the name of the genomic annotation in GTF format
 
 .. code-block:: bash
    :name: kallisto_quant
