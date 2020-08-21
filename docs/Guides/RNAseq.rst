@@ -181,6 +181,8 @@ Example Usage
 
    STAR --runThreadN 10 --runMode genomeGenerate --genomeDir AMEL_Index --genomeFastaFiles GCF_003254395.2_Amel_HAv3.1_genomic.fna --sjdbGTFfile GCF_003254395.2_Amel_HAv3.1_genomic.gtf --sjdbOverhang 99 --limitGenomeGenerateRAM 38000000000
 
+----
+
 Read Alignment
 --------------
 Read alignment requires two input files to operate:
@@ -230,6 +232,8 @@ Useful Links
 * `Documentation <https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf>`_
 * `Reference \(Dobin et al\.\, 2012\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts635>`_
 * `Github <https://github.com/alexdobin/STAR>`_
+
+----
 
 Gene Quantification STAR Results w/ featureCounts
 -------------------------------------------------
@@ -284,6 +288,8 @@ Example Usage
    :name: kallisto_index
 
    kallisto index -i GCF_003254395.2_Amel_HAv3.1_rna.idx GCF_003254395.2_Amel_HAv3.1_rna.fna.gz
+
+----
 
 Transcript Quantification
 -------------------------
