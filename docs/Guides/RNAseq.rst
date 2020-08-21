@@ -287,7 +287,6 @@ Transcript quantification requires two input files to operate:
 
 Common Arguments
 ^^^^^^^^^^^^^^^^
-############################
 **quant**
   Required to set the run-mode to transcript quantification *Note: Positional argument*
 :quant: *<positional>*
