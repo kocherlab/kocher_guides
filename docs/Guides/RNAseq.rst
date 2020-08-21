@@ -41,8 +41,8 @@ Usage
 Useful Links
 ------------
 * `Documentation <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/>`_
-* `Reference \(website\) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 * `Github <https://github.com/s-andrews/FastQC>`_
+* `Reference \(website\) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 
 ----
 
@@ -96,9 +96,9 @@ Usage
 Useful Links
 ------------
 * `Documentation <https://github.com/OpenGene/fastp/blob/master/README.md>`_
-* `Reference \(Chen et al\.\, 2018\) <https://academic.oup.com/bioinformatics/article/34/17/i884/5093234>`_
 * `Github <https://github.com/OpenGene/fastp>`_
 * `Phred scores <https://en.wikipedia.org/wiki/Phred_quality_score>`_
+* `Reference \(Chen et al\.\, 2018\) <https://academic.oup.com/bioinformatics/article/34/17/i884/5093234>`_
 
 **********************
 RNA-seq Read Alignment
@@ -230,8 +230,8 @@ Example Usage
 Useful Links
 ------------
 * `Documentation <https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf>`_
-* `Reference \(Dobin et al\.\, 2012\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts635>`_
 * `Github <https://github.com/alexdobin/STAR>`_
+* `Reference \(Dobin et al\.\, 2012\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts635>`_
 
 ----
 
@@ -260,8 +260,8 @@ Example Usage
 Useful Links
 ^^^^^^^^^^^^
 * `Documentation <http://bioinf.wehi.edu.au/subread-package/SubreadUsersGuide.pdf>`_
-* `Reference \(Liao et al\.\, 2014\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btt656>`_
 * `Homepage <http://subread.sourceforge.net/>`_
+* `Reference \(Liao et al\.\, 2014\) <https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btt656>`_
 
 ----
 
@@ -345,8 +345,8 @@ Example Usage
 Useful Links
 ------------
 * `Documentation <https://pachterlab.github.io/kallisto/manual>`_
-* `Reference \(Bray et al\.\, 2016\) <https://www.nature.com/articles/nbt.3519>`_
 * `Homepage <https://pachterlab.github.io/kallisto/>`_
+* `Reference \(Bray et al\.\, 2016\) <https://www.nature.com/articles/nbt.3519>`_
 
 ----
 
@@ -433,9 +433,58 @@ Useful Links
 ------------
 * `DESeq2 Documentation <https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html>`_
 * `DESeq2 Reference Manual <https://bioconductor.org/packages/release/bioc/manuals/DESeq2/man/DESeq2.pdf>`_
-* `DESeq2 Reference \(Love et al\.\, 2014\) <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8>`_
 * `DESeq2 Homepage <https://bioconductor.org/packages/release/bioc/html/DESeq2.html>`_
+* `DESeq2 Reference \(Love et al\.\, 2014\) <https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8>`_
 * `tximport Documentation <https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html>`_
 * `tximport Reference Manual <https://bioconductor.org/packages/release/bioc/manuals/tximport/man/tximport.pdf>`_
-* `tximport Reference \(Soneson et al\.\, 2015\) <https://f1000research.com/articles/4-1521/v1>`_
 * `tximport Homepage <https://bioconductor.org/packages/release/bioc/html/tximport.html>`_
+* `tximport Reference \(Soneson et al\.\, 2015\) <https://f1000research.com/articles/4-1521/v1>`_
+
+sleuth
+======
+A method to identify DE genes using only from kallisto transcript abundances. Below you will find a commented R script.
+
+Usage
+^^^^^
+.. code-block:: bash
+   :name: sleuth
+
+   library("DESeq2") # Import DESeq2
+   library(tximport) # Import tximport
+   samples <- read.table(file.path("sample_groups.csv"), header = TRUE, sep = ",") # Read in the sample groups
+   files <- file.path("../../kallisto", samples$file, "abundance.h5") # Assign paths to transcript abundance files (e.g. kallisto/ERR883768_1/abundance.h5)
+   names(files) <- samples$file # Assign each path with its sample id (e.g. ERR883768_1)
+   tx2gene <- read.table(file.path("../../../Genome/GCF_000214255.1_Bter_1.0_genomic.tid_to_gid.csv"), header = FALSE, sep = ",") # Read in the transcript/gene conversion file
+   txi <- tximport(files, type = "kallisto", tx2gene = tx2gene) # Read in the kallisto files and convert the transcript abundances to gene abundances
+   coldata <- read.csv("sample_groups.csv", row.names=1) # Read in the sample groups
+   coldata <- coldata[,c("group","type")] # Limit the columns in the sample groups to group and type
+   coldata$group <- factor(coldata$group) # Categorize and save the sample group data
+   coldata$type <- factor(coldata$type) # Categorize and save the sample type data
+   dds <- DESeqDataSetFromTximport(txi, coldata, ~group) # Create a DESeq object from the tximport data
+   dds <- DESeq(dds) # Run DESeq
+   res <- results(dds) # Save the results
+   resOrdered <- res[order(res$pvalue),] # Save the adjusted p-values
+   write.csv(as.data.frame(resOrdered), file="DESeq2_kallisto.csv") # Create a csv of results w/adjusted p-values
+
+   library("sleuth") # Import sleuth
+   s2c <- read.table(file.path("sample_groups.csv"), header = TRUE, stringsAsFactors=FALSE, sep=",") # Read in the sample groups
+   kal_dirs <- file.path("../../kallisto", s2c$file) # Assign the paths to the transcript abundance files (e.g. kallisto/ERR883768_1/abundance.h5
+   s2c <- dplyr::select(s2c, sample = file, group) # Change the file header to sample
+   s2c <- dplyr::mutate(s2c, path = kal_dirs) # Add the transcript abundance paths to the sample information
+   tx2gene <- read.table(file.path("../../../Genome/GCF_000214255.1_Bter_1.0_genomic.tid_to_gid.csv"), header = FALSE, sep = ",") # Read in the transcript/gene conversion file
+   colnames(tx2gene) = c("target_id","gene_id") # Assign the columns in the transcript/gene conversion file
+   so <- sleuth_prep(s2c, target_mapping = tx2gene, aggregation_column = "gene_id", extra_bootstrap_summary = TRUE) # Create a sleuth object, and convert the transcript to gene abundances
+   so <- sleuth_fit(so, ~group, "full") # Fit the data
+   so <- sleuth_fit(so, ~1, "reduced") # Fit the data
+   so <- sleuth_lrt(so, "reduced", "full") # Perform an lrt
+   sleuth_table <- sleuth_results(so, "reduced:full", "lrt", show_all = FALSE) # Create a table of the results
+   write.csv(as.data.frame(sleuth_table), file="sleuth_kallisto.csv")  # Create a csv of results
+
+Useful Links
+------------
+* `sleuth Manual <https://pachterlab.github.io/sleuth/manual>`_
+* `sleuth Walkthroughs <https://pachterlab.github.io/sleuth/walkthroughs>`_
+* `sleuth Homepage <https://pachterlab.github.io/sleuth/about>`_
+* `sleuth GitHub <https://github.com/pachterlab/sleuth>`_
+* `sleuth Reference \(Pimentel et al\.\, 2017\) <https://www.nature.com/articles/nmeth.4324>`_
+
