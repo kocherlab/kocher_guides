@@ -135,7 +135,6 @@ This may be done using **gffread**.
 
    gffread GCF_003254395.2_Amel_HAv3.1_genomic.gff -T -o GCF_003254395.2_Amel_HAv3.1_genomic.gtf
 
-
 Transcript/Gene Conversion File
 -------------------------------
 This may be done using **create_tid_converter.py** using a GFF as an input.
@@ -175,6 +174,8 @@ Arguments
 **--limitGenomeGenerateRAM** *<RAM_int>*
   Defines the RAM limit for indexing in bytes
 
+Example Usage
+^^^^^^^^^^^^^
 .. code-block:: bash
    :name: star_index
 
@@ -213,6 +214,8 @@ Output Options
 **--outSAMtype** *BAM Unsorted SortedByCoordinate*
   Defines the output format as seperate sorted and unsorted BAM files
 
+Example Usage
+^^^^^^^^^^^^^
 .. code-block:: bash
    :name: star_alignment
 
@@ -243,6 +246,8 @@ Arguments
 **BAM File**
   The filename of the **BAM File**. *Note: Positional argument*
 
+Example Usage
+^^^^^^^^^^^^^
 .. code-block:: bash
    :name: star_quant
 
@@ -273,6 +278,8 @@ Arguments
 **Transcript Sequences File**
   The filename of the **Transcript Sequences File**. *Note: Positional argument*
 
+Example Usage
+^^^^^^^^^^^^^
 .. code-block:: bash
    :name: kallisto_index
 
@@ -318,6 +325,8 @@ Output Options
 **--gtf** *<gtf_filename>*
   Defines the name of the genomic annotation in GTF format
 
+Example Usage
+^^^^^^^^^^^^^
 .. code-block:: bash
    :name: kallisto_quant
 
