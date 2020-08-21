@@ -100,6 +100,10 @@ Useful Links
 * `Phred scores <https://en.wikipedia.org/wiki/Phred_quality_score>`_
 * `Reference \(Chen et al\.\, 2018\) <https://academic.oup.com/bioinformatics/article/34/17/i884/5093234>`_
 
+
+----
+
+
 **********************
 RNA-seq Read Alignment
 **********************
@@ -348,7 +352,9 @@ Useful Links
 * `Homepage <https://pachterlab.github.io/kallisto/>`_
 * `Reference \(Bray et al\.\, 2016\) <https://www.nature.com/articles/nbt.3519>`_
 
+
 ----
+
 
 ********************************
 Differential Expression Analysis
