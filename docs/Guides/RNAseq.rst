@@ -11,9 +11,9 @@ Quality Control (QC)
 All QC programs may be imported using:
 
 .. code-block:: bash
-   :name: kocher_RNA1
+   :name: kocher_SEQ1
 
-   conda activate kocher_RNA
+   conda activate kocher_SEQ
 
 FastQC
 ======
@@ -112,9 +112,9 @@ In computational biology, sequence alignment is a process used to identify regio
 All RNA-seq Read Alignment programs may be imported using:
 
 .. code-block:: bash
-   :name: kocher_RNA2
+   :name: kocher_SEQ2
 
-   conda activate kocher_RNA
+   conda activate kocher_SEQ
 
 Input Files Types
 =================
