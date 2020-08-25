@@ -454,24 +454,7 @@ Usage
 ^^^^^
 .. code-block:: bash
    :name: sleuth
-
-   library("DESeq2") # Import DESeq2
-   library(tximport) # Import tximport
-   samples <- read.table(file.path("sample_groups.csv"), header = TRUE, sep = ",") # Read in the sample groups
-   files <- file.path("../../kallisto", samples$file, "abundance.h5") # Assign paths to transcript abundance files (e.g. kallisto/ERR883768_1/abundance.h5)
-   names(files) <- samples$file # Assign each path with its sample id (e.g. ERR883768_1)
-   tx2gene <- read.table(file.path("../../../Genome/GCF_000214255.1_Bter_1.0_genomic.tid_to_gid.csv"), header = FALSE, sep = ",") # Read in the transcript/gene conversion file
-   txi <- tximport(files, type = "kallisto", tx2gene = tx2gene) # Read in the kallisto files and convert the transcript abundances to gene abundances
-   coldata <- read.csv("sample_groups.csv", row.names=1) # Read in the sample groups
-   coldata <- coldata[,c("group","type")] # Limit the columns in the sample groups to group and type
-   coldata$group <- factor(coldata$group) # Categorize and save the sample group data
-   coldata$type <- factor(coldata$type) # Categorize and save the sample type data
-   dds <- DESeqDataSetFromTximport(txi, coldata, ~group) # Create a DESeq object from the tximport data
-   dds <- DESeq(dds) # Run DESeq
-   res <- results(dds) # Save the results
-   resOrdered <- res[order(res$pvalue),] # Save the adjusted p-values
-   write.csv(as.data.frame(resOrdered), file="DESeq2_kallisto.csv") # Create a csv of results w/adjusted p-values
-
+   
    library("sleuth") # Import sleuth
    s2c <- read.table(file.path("sample_groups.csv"), header = TRUE, stringsAsFactors=FALSE, sep=",") # Read in the sample groups
    kal_dirs <- file.path("../../kallisto", s2c$file) # Assign the paths to the transcript abundance files (e.g. kallisto/ERR883768_1/abundance.h5
