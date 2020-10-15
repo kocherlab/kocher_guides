@@ -63,16 +63,16 @@ Situations often arise when you want to run many almost identical jobs simultane
    :name: myarray
 
    #!/bin/bash
-   #SBATCH --job-name=myarray-job   # Name of the job
-   #SBATCH --output=myarray.%j.out  # STDOUT file
-   #SBATCH --error=myarray.%j.err   # STDERR file
-   #SBATCH --nodes=1                # Node count
-   #SBATCH --ntasks=1               # Number of tasks across all nodes
-   #SBATCH --cpus-per-task=1        # Cores per task (>1 if multi-threaded tasks)
-   #SBATCH --mem-per-cpu=4G         # Memory per core (4G is default)
-   #SBATCH --time=00:01:00          # Run time limit (HH:MM:SS)
-   #SBATCH --array=1-6%3            # Job array, limited to 3 simultaneous tasks
-   #SBATCH --mail-type=all          # Email on job start, end, and fault
+   #SBATCH --job-name=myarray-job     # Name of the job
+   #SBATCH --output=myarray.%A.%a.out # STDOUT file
+   #SBATCH --error=myarray.%A.%a.err  # STDERR file
+   #SBATCH --nodes=1                  # Node count
+   #SBATCH --ntasks=1                 # Number of tasks across all nodes
+   #SBATCH --cpus-per-task=1          # Cores per task (>1 if multi-threaded tasks)
+   #SBATCH --mem-per-cpu=4G           # Memory per core (4G is default)
+   #SBATCH --time=00:01:00            # Run time limit (HH:MM:SS)
+   #SBATCH --array=1-6%3              # Job array, limited to 3 simultaneous tasks
+   #SBATCH --mail-type=all            # Email on job start, end, and fault
    #SBATCH --mail-user=<YourNetID>@princeton.edu
    
    sed -n -e "$SLURM_ARRAY_TASK_ID p" slurm_jobs | srun bash
