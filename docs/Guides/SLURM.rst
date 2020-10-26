@@ -14,14 +14,16 @@ Most scripts - including a large number of bioinformatic analyses and pipelines 
    :name: myserial
 
    #!/bin/bash
-   #SBATCH --job-name=myserial-job  # Name of the job
-   #SBATCH --nodes=1                # Node count
-   #SBATCH --ntasks=1               # Number of tasks across all nodes
-   #SBATCH --cpus-per-task=1        # Cores per task (>1 if multi-threaded tasks)
-   #SBATCH --mem-per-cpu=4G         # Memory per core (4G is default)
-   #SBATCH --time=00:01:00          # Run time limit (HH:MM:SS)
-   #SBATCH --mail-type=all          # Email on job start, end, and fault
-   #SBATCH --mail-user=<YourNetID>@princeton.edu
+   #SBATCH --job-name=myserial-job                 # Name of the job
+   #SBATCH --output=myserial-job.%j.out            # Name of the output file (with jobID %j)
+   #SBATCH --error=myserial-job.%j.err             # Name of the error file (with jobID %j)
+   #SBATCH --nodes=1                               # Node count
+   #SBATCH --ntasks=1                              # Number of tasks across all nodes
+   #SBATCH --cpus-per-task=1                       # Cores per task (>1 if multi-threaded tasks)
+   #SBATCH --mem-per-cpu=4G                        # Memory per core (4G is default)
+   #SBATCH --time=00:01:00                         # Run time limit (HH:MM:SS)
+   #SBATCH --mail-type=all                         # Email on job start, end, and fault
+   #SBATCH --mail-user=<YourNetID>@princeton.edu   # Email address
 
    echo 'Hello world!'
    echo 'This is my first SLURM script'
@@ -39,14 +41,16 @@ Often a complex or large serial process (e.g. RNA-seq alignment, homology identi
    :name: myserial
 
    #!/bin/bash
-   #SBATCH --job-name=mympi-job     # Name of the job
-   #SBATCH --nodes=1                # Node count
-   #SBATCH --ntasks=1               # Number of tasks across all nodes
-   #SBATCH --cpus-per-task=10       # Cores per task (>1 if multi-threaded tasks)
-   #SBATCH --mem-per-cpu=4G         # Memory per core (4G is default)
-   #SBATCH --time=00:01:00          # Run time limit (HH:MM:SS)
-   #SBATCH --mail-type=all          # Email on job start, end, and fault
-   #SBATCH --mail-user=<YourNetID>@princeton.edu
+   #SBATCH --job-name=mympi-job                    # Name of the job
+   #SBATCH --output=mympi-job.%j.out               # Name of the output file (with jobID %j)
+   #SBATCH --error=mympi-job.%j.err                # Name of the error file (with jobID %j)
+   #SBATCH --nodes=1                               # Node count
+   #SBATCH --ntasks=1                              # Number of tasks across all nodes
+   #SBATCH --cpus-per-task=10                      # Cores per task (>1 if multi-threaded tasks)
+   #SBATCH --mem-per-cpu=4G                        # Memory per core (4G is default)
+   #SBATCH --time=00:01:00                         # Run time limit (HH:MM:SS)
+   #SBATCH --mail-type=all                         # Email on job start, end, and fault
+   #SBATCH --mail-user=<YourNetID>@princeton.edu   # Email address
 
    blastn -query query.fasta -db db.fasta -out blast.out -num_threads 10
 
@@ -63,17 +67,17 @@ Situations often arise when you want to run many almost identical jobs simultane
    :name: myarray
 
    #!/bin/bash
-   #SBATCH --job-name=myarray-job     # Name of the job
-   #SBATCH --output=myarray.%A.%a.out # STDOUT file
-   #SBATCH --error=myarray.%A.%a.err  # STDERR file
-   #SBATCH --nodes=1                  # Node count
-   #SBATCH --ntasks=1                 # Number of tasks across all nodes
-   #SBATCH --cpus-per-task=1          # Cores per task (>1 if multi-threaded tasks)
-   #SBATCH --mem-per-cpu=4G           # Memory per core (4G is default)
-   #SBATCH --time=00:01:00            # Run time limit (HH:MM:SS)
-   #SBATCH --array=1-6%3              # Job array, limited to 3 simultaneous tasks
-   #SBATCH --mail-type=all            # Email on job start, end, and fault
-   #SBATCH --mail-user=<YourNetID>@princeton.edu
+   #SBATCH --job-name=myarray-job                  # Name of the job
+   #SBATCH --output=myarray.%A.%a.out              # Name of the output files (with array jobID %A, and task number %a)
+   #SBATCH --error=myarray.%A.%a.err               # Name of the error files (with array jobID %A, and task number %a)
+   #SBATCH --nodes=1                               # Node count
+   #SBATCH --ntasks=1                              # Number of tasks across all nodes
+   #SBATCH --cpus-per-task=1                       # Cores per task (>1 if multi-threaded tasks)
+   #SBATCH --mem-per-cpu=4G                        # Memory per core (4G is default)
+   #SBATCH --time=00:01:00                         # Run time limit (HH:MM:SS)
+   #SBATCH --array=1-6%3                           # Job array, limited to 3 simultaneous tasks
+   #SBATCH --mail-type=all                         # Email on job start, end, and fault
+   #SBATCH --mail-user=<YourNetID>@princeton.edu   # Email address
    
    sed -n -e "$SLURM_ARRAY_TASK_ID p" slurm_jobs | srun bash
 
@@ -95,5 +99,5 @@ Please note: In comparison to our serial SLURM script, our array script includes
 Additional Information
 **********************
 
-More tutorials and information on SLURM may be found at the `Intro to HPC on the Princeton Clusters Github <https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/06_slurm>`_.
+More tutorials and information on SLURM may be found at the `Introducing Slurm <https://researchcomputing.princeton.edu/slurm>`_.
 
