@@ -10,4 +10,5 @@ Welcome to the Kocher Lab Documentation
    Guides/RNAseq
    Guides/Galaxy	
    Guides/SLURM
+   Guides/VPN
    Guides/Git
