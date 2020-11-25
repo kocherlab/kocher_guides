@@ -8,7 +8,7 @@ Download GlobalProtect
 1. Visit the `GlobalProtect VPN <https://vpn.princeton.edu/>`_ web portal.
 2. Enter your Princeton NetID, your password, and click Log in. 
 3. Wait for Duo to send a request to your default device and approve the Duo request.
-4. To download, click on the GlobalProtect Agent :numref:`(see red box %s) <webPortal>`.
+4. To download, click on the GlobalProtect Agent :numref:`(see red box) <webPortal>`.
 
 .. figure:: VPN/VPN1.png
     :width: 100%
@@ -18,7 +18,7 @@ Download GlobalProtect
      
     GlobalProtect VPN web portal
 
-5. On Windows - Select Continue installing from outside the Store :numref:`(see red box %s) <install>`.
+5. On Windows - Select Continue installing from outside the Store :numref:`(see red box) <install>`.
 
 .. figure:: VPN/VPN2.png
     :width: 50%
@@ -33,7 +33,7 @@ Download GlobalProtect
 8. On the Confirm Installation screen, click Next.
 9. On the Account Control pop-up, enter an admin user name and password. You will be asked, “Do you want to allow this app to make changes to your device?” Click Yes.
 10. On the Installation Complete screen, click Close to exit.
-11. Once installed, you should see the following pop-up :numref:`(see image %s) <vpnNOIP>` on your desktop.
+11. Once installed, you should see the following pop-up :numref:`(see image) <vpnNOIP>` on your desktop.
 
 .. figure:: VPN/VPN3.png
     :width: 50%
@@ -41,7 +41,7 @@ Download GlobalProtect
     :figclass: align-center
     :name: vpnNOIP
 
-12. Type vpn.princeton.edu in the text box :numref:`(see image %s) <vpnIP>, click Connect.
+12. Type vpn.princeton.edu in the text box :numref:`(see image) <vpnIP>`, click Connect.
 
 .. figure:: VPN/VPN4.png
     :width: 50%
