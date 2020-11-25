@@ -21,7 +21,7 @@ Download GlobalProtect
 5. On Windows - Select Continue installing from outside the Store :numref:`(see red box %s) <install>.
 
 .. figure:: VPN/VPN2.png
-    :width: 100%
+    :width: 50%
     :align: center
     :figclass: align-center
     :name: install
@@ -36,7 +36,7 @@ Download GlobalProtect
 11. Once installed, you should see the following pop-up :numref:`(see image %s) <vpnNOIP> on your desktop.
 
 .. figure:: VPN/VPN3.png
-    :width: 100%
+    :width: 50%
     :align: center
     :figclass: align-center
     :name: vpnNOIP
@@ -44,7 +44,7 @@ Download GlobalProtect
 12. Type vpn.princeton.edu in the text box :numref:`(see image %s) <vpnIP>, click Connect.
 
 .. figure:: VPN/VPN4.png
-    :width: 100%
+    :width: 50%
     :align: center
     :figclass: align-center
     :name: vpnIP
