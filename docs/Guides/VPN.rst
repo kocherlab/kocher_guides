@@ -2,10 +2,6 @@
 VPN Installation Instructions
 #############################
 
-*******
-Windows
-*******
-
 1. Visit the `GlobalProtect VPN <https://vpn.princeton.edu/>`_ web portal.
 2. Enter your Princeton NetID, your password, and click Log in. 
 3. Wait for Duo to send a request to your default device and approve the Duo request.
@@ -74,21 +70,3 @@ If you have connected, you should see a small blue globe on your taskbar :numref
     :align: center
     :figclass: align-center
     :name: globe
-
-
-*****
-MacOS
-*****
-
-1. Download and install SonicWall Mobile Connect from the Mac App Store.
-2. Open the SonicWall Mobile Connect application.
-3. Click Accept to continue.
-4. Click the gear icon to add a connection.
-5. Enter the following: Name: "Princeton University" Server: "remote.princeton.edu"
-6. Click Save.
-7. Click Connect.
-8. Confirm Princeton University is selected and click Next.
-9. Enter your Princeton NetID and password and click Login.
-10. Wait for Duo to send a request to your default Duo device.
-11. Approve the Duo request.* *IMPORTANT: The connection will fail if you do not approve the Duo request. For information about Duo multifactor authentication, see http://www.princeton.edu/duo.
-12. The SRA software is now installed and configured.
