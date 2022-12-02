@@ -8,7 +8,6 @@ Welcome to the Kocher Lab Documentation
    :hidden:
 
    Guides/RNAseq
-   Guides/Galaxy	
    Guides/SLURM
    Guides/VPN
    Guides/Git
