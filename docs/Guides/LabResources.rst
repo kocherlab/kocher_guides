@@ -15,6 +15,7 @@ Access to the database requires:
     :width: 100%
     :align: center
     :figclass: align-center
+    :class: with-border
     :name: Account
      
     Login Page
@@ -25,6 +26,7 @@ Once granted access to the database, the homepage will be displayed.
     :width: 100%
     :align: center
     :figclass: align-center
+    :class: with-border
     :name: Homepage
      
     Homepage
@@ -35,6 +37,7 @@ To begin searching the database, select **Search Database** link and select the 
     :width: 100%
     :align: center
     :figclass: align-center
+    :class: with-border
     :name: Homepage
      
     Search the database
@@ -43,6 +46,7 @@ To begin searching the database, select **Search Database** link and select the 
     :width: 100%
     :align: center
     :figclass: align-center
+    :class: with-border
     :name: Homepage
      
     Tables within the database
@@ -54,6 +58,7 @@ Once a table is selected, it will be displayed below. The displayed data may be 
     :width: 100%
     :align: center
     :figclass: align-center
+    :class: with-border
     :name: Homepage
      
     Download data from the table
