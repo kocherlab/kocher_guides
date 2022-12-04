@@ -12,10 +12,9 @@ Access to the database requires:
 * Permission for the account to access the database (ask Andrew)
 
 .. figure:: LabResources/SDB_Login.jpg
+    :class: with-border
     :width: 100%
     :align: center
-    :figclass: align-center
-    :class: with-border
     :name: Account
      
     Login Page
@@ -62,3 +61,12 @@ Once a table is selected, it will be displayed below. The displayed data may be 
     :name: Homepage
      
     Download data from the table
+
+
+***************************************
+Beenomes: Sequence Browser and Database
+***************************************
+The Kocher lab sequence browser and database may be found at the `Halictid Genome Browser <https://beenomes.princeton.edu/>`_. This page requires no special login and is available to the public. The homepage hosts links to access the sequence browser and/or download the genomes (which are also available on Argo).
+
+As an example, to access the sequence browser for *Lasioglossum albipes*
+
