@@ -11,13 +11,10 @@ Access to the database requires:
 * A Google account or a Princeton account (must be linked to Google)
 * Permission for the account to access the database (ask Andrew)
 
-.. figure:: LabResources/SDB_Login.jpg
+.. image:: LabResources/SDB_Login.jpg
     :class: with-border
     :width: 100%
     :align: center
-    :name: Account
-     
-    Login Page
 
 Once granted access to the database, the homepage will be displayed.
 
