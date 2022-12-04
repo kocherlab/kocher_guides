@@ -13,7 +13,7 @@ Access to the database requires:
 * Permission for the account to access the database (ask Andrew)
 
 .. figure:: LabResources/SDB_Login.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: Login
@@ -23,7 +23,7 @@ Access to the database requires:
 Once granted access to the database, the homepage will be displayed.
 
 .. figure:: LabResources/SDB_Homepage.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SDB_Homepage
@@ -33,7 +33,7 @@ Once granted access to the database, the homepage will be displayed.
 To begin searching the database, select **Search Database** link and select the table you wish to examine. 
 
 .. figure:: LabResources/SDB_Search.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: Search
@@ -41,7 +41,7 @@ To begin searching the database, select **Search Database** link and select the 
     Search the database
 
 .. figure:: LabResources/SDB_Tables.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: Tables
@@ -52,7 +52,7 @@ To begin searching the database, select **Search Database** link and select the 
 Once a table is selected, it will be displayed below. The displayed data may be downloaded by clicking either **CSV** or **Excel**.
 
 .. figure:: LabResources/SDB_Download.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: Download
@@ -66,7 +66,7 @@ Beenomes: Genome Browser and Sequence Database
 The Kocher lab genome browser and sequence database may be found at the `Halictid Genome Browser <https://beenomes.princeton.edu/>`_. This page requires no special login and is available to the public. The homepage hosts links to access the genome browser and/or download the genomes (which are also available on Argo).
 
 .. figure:: LabResources/BG_Homepage.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: BG_Homepage
@@ -74,7 +74,7 @@ The Kocher lab genome browser and sequence database may be found at the `Halicti
     Beenomes Homepage
 
 .. figure:: LabResources/BG_Browser.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: BG_browser
@@ -85,7 +85,7 @@ The Kocher lab genome browser and sequence database may be found at the `Halicti
 As an example, to access the genome browser for *Lasioglossum albipes* (LALB) you scroll until you reach the image of LALB, then click on the image.
 
 .. figure:: LabResources/BG_LALB.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: BG_LALB
@@ -96,7 +96,7 @@ As an example, to access the genome browser for *Lasioglossum albipes* (LALB) yo
 The LALB genome browser (built using Jbrowse) will then be loaded. Like the UCSS genome browser, additional information may be displayed by selecting additional tracks.
 
 .. figure:: LabResources/SB_Tracks.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SB_Tracks
@@ -112,7 +112,7 @@ It’s also possible to search the database for:
 If possible, the result will then be displayed.
 
 .. figure:: LabResources/SB_Search.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SB_Search
@@ -125,7 +125,7 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
 * Right click to display options, including links to the sequence database
 
 .. figure:: LabResources/SB_Gene.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SB_Search
@@ -133,7 +133,7 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
     Zoomed-in gene
 
 .. figure:: LabResources/SB_Details.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SB_Details
@@ -142,7 +142,7 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
 
 
 .. figure:: LabResources/SB_Options.jpg
-    :width: 25%
+    :width: 75%
     :align: center
     :figclass: align-center
     :name: SB_Options
