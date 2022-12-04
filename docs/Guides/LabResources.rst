@@ -8,42 +8,43 @@ Specimen Database
 The Kocher lab specimen database may be found at the `Kocher Lab Specimen Database <http://kocherdb.princeton.edu/>`_. By default, the login page will be displayed.
 
 Access to the database requires:
+
 * A Google account or a Princeton account (must be linked to Google)
 * Permission for the account to access the database (ask Andrew)
 
-.. image:: LabResources/SDB_Login.jpg
-    :class: with-border
-    :width: 100%
+.. figure:: LabResources/SDB_Login.jpg
+    :width: 25%
     :align: center
+    :figclass: align-center
+    :name: Login
+
+    Specimen database login Page
 
 Once granted access to the database, the homepage will be displayed.
 
 .. figure:: LabResources/SDB_Homepage.jpg
-    :width: 100%
+    :width: 25%
     :align: center
     :figclass: align-center
-    :class: with-border
-    :name: Homepage
+    :name: SDB_Homepage
      
     Homepage
 
 To begin searching the database, select **Search Database** link and select the table you wish to examine. 
 
 .. figure:: LabResources/SDB_Search.jpg
-    :width: 100%
+    :width: 25%
     :align: center
     :figclass: align-center
-    :class: with-border
-    :name: Homepage
+    :name: Search
      
     Search the database
 
 .. figure:: LabResources/SDB_Tables.jpg
-    :width: 100%
+    :width: 25%
     :align: center
     :figclass: align-center
-    :class: with-border
-    :name: Homepage
+    :name: Tables
      
     Tables within the database
 
@@ -51,19 +52,99 @@ To begin searching the database, select **Search Database** link and select the 
 Once a table is selected, it will be displayed below. The displayed data may be downloaded by clicking either **CSV** or **Excel**.
 
 .. figure:: LabResources/SDB_Download.jpg
-    :width: 100%
+    :width: 25%
     :align: center
     :figclass: align-center
-    :class: with-border
-    :name: Homepage
+    :name: Download
      
     Download data from the table
 
 
-***************************************
-Beenomes: Sequence Browser and Database
-***************************************
-The Kocher lab sequence browser and database may be found at the `Halictid Genome Browser <https://beenomes.princeton.edu/>`_. This page requires no special login and is available to the public. The homepage hosts links to access the sequence browser and/or download the genomes (which are also available on Argo).
+**********************************************
+Beenomes: Genome Browser and Sequence Database
+**********************************************
+The Kocher lab genome browser and sequence database may be found at the `Halictid Genome Browser <https://beenomes.princeton.edu/>`_. This page requires no special login and is available to the public. The homepage hosts links to access the genome browser and/or download the genomes (which are also available on Argo).
 
-As an example, to access the sequence browser for *Lasioglossum albipes*
+.. figure:: LabResources/BG_Homepage.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: BG_Homepage
+     
+    Beenomes Homepage
 
+.. figure:: LabResources/BG_Browser.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: BG_browser
+     
+    Selecting the genome browser
+
+
+As an example, to access the genome browser for *Lasioglossum albipes* (LALB) you scroll until you reach the image of LALB, then click on the image.
+
+.. figure:: LabResources/BG_LALB.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: BG_LALB
+     
+    Selecting LALB
+
+
+The LALB genome browser (built using Jbrowse) will then be loaded. Like the UCSS genome browser, additional information may be displayed by selecting additional tracks.
+
+.. figure:: LabResources/SB_Tracks.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: SB_Tracks
+     
+    Available tracks
+
+It’s also possible to search the database for:
+
+* Genes
+* Ortholog Groups
+* Chromosomal positions
+
+If possible, the result will then be displayed.
+
+.. figure:: LabResources/SB_Search.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: SB_Search
+     
+    Search the database
+
+It’s also possible to simply zoom in to better display a gene of interest. To bring up additional information for a gene, one may:
+
+* Left click to display relevant details
+* Right click to display options, including links to the sequence database
+
+.. figure:: LabResources/SB_Gene.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: SB_Search
+     
+    Zoomed-in gene
+
+.. figure:: LabResources/SB_Details.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: SB_Details
+     
+    Left click to view details
+
+
+.. figure:: LabResources/SB_Options.jpg
+    :width: 25%
+    :align: center
+    :figclass: align-center
+    :name: SB_Options
+     
+    Right click to view options, and access the sequence database
