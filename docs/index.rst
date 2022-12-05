@@ -1,6 +1,6 @@
-#######################################
-Welcome to the Kocher Lab Documentation
-#######################################
+################################
+Welcome to the Kocher Lab Guides
+################################
 
 .. toctree::
    :maxdepth: 1
@@ -11,4 +11,3 @@ Welcome to the Kocher Lab Documentation
    Guides/RNAseq
    Guides/SLURM
    Guides/VPN
-   Guides/Git
