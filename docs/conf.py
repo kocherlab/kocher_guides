@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Kocher Lab Documentation'
-copyright = '2020, Andrew Webb'
-author = 'Andrew Webb'
+project = 'Kocher Lab Guides'
+copyright = '2020-2022, Kocher Lab'
+author = 'Kocher Lab'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
