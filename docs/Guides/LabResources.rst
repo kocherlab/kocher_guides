@@ -149,3 +149,39 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
     :name: SB_Options
      
     Right click to view options, and access the sequence database
+
+
+The options listed are:
+
+* View details – i.e. left clinking the gene
+* Highlight the gene
+* Download CDS(s) (**C**o**D**ing **S**equence)
+* Download Proteins(s)
+* Download Orthologs
+
+The three **Download** options open a new page on the Kocher lab sequence database. The sequence database was designed to store FASTA sequences (CDS and amino acid) and orthologs for each transcript. Selecting **Download CDS(s)** will open the following database entry for the gene in question.
+
+.. figure:: LabResources/KSB_Example.jpg
+    :width: 75%
+    :align: center
+    :figclass: align-center
+    :name: KSB_Example
+     
+    CDS sqeuence for LALB_06381
+
+At the top of the sequence database webpage there are links to:
+
+* Orthologs – Site linking to the IDs of orthologs sequences (where possible).
+* CDS – CDS sequence(s) of the of the gene in question. Also has an option to download FASTA file(s)
+* Protein – Protein sequence(s) of the of the gene in question. Also has an option to download FASTA file(s)
+* Gene (At present links to other information)
+
+Selecting **Orthologs** will display the following page. Please note that **Orthologs** page displays both **Halictid Orthologs** and **Other Orthologs** (Drosophila and/or AMEL IDs). The page provides links to database entries for the *Halictids* and AMEL, and provides links to Flybase for Drosophila IDs. The page also provides links to download a FASTA file of the orthologs sequences. 
+
+.. figure:: LabResources/KSB_Orthologs.jpg
+    :width: 75%
+    :align: center
+    :figclass: align-center
+    :name: KSB_Orthologs
+     
+    Orthologs for LALB_06381
