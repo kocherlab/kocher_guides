@@ -73,11 +73,11 @@ The Kocher lab genome browser and sequence database may be found at the `Halicti
      
     Beenomes Homepage
 
-.. figure:: LabResources/BG_Browser.jpg
+.. figure:: LabResources/BG_Browse.jpg
     :width: 75%
     :align: center
     :figclass: align-center
-    :name: BG_browser
+    :name: BG_browse
      
     Selecting the genome browser
 
