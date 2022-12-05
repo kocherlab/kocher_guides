@@ -12,7 +12,6 @@ Access to the database requires:
 * A Google account or a Princeton account (must be linked to Google)
 * Permission for the account to access the database (ask Andrew)
 
-.. class:: with-border
 .. figure:: LabResources/SDB_Login.jpg
     :width: 75%
     :align: center
@@ -131,7 +130,7 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
     :figclass: align-center
     :name: SB_Search
      
-    Zoomed-in gene
+    Zoomed in vier of LALB_06381
 
 .. figure:: LabResources/SB_Details.jpg
     :width: 75%
@@ -139,7 +138,7 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
     :figclass: align-center
     :name: SB_Details
      
-    Left click to view details
+    Left click to view details of LALB_06381
 
 
 .. figure:: LabResources/SB_Options.jpg
@@ -148,14 +147,14 @@ It’s also possible to simply zoom in to better display a gene of interest. To 
     :figclass: align-center
     :name: SB_Options
      
-    Right click to view options, and access the sequence database
+    Right click to view options of LALB_06381, and access the sequence database
 
 
 The options listed are:
 
 * View details – i.e. left clinking the gene
 * Highlight the gene
-* Download CDS(s) (**C**o**D**ing **S**equence)
+* Download CDS(s) CoDing Sequence)
 * Download Proteins(s)
 * Download Orthologs
 
